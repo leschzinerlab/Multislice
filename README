@@ -1,0 +1,5 @@
+Multislice image simulations of PDB models for accurate cryoEM image simulation.
+
+/bin - executables for image simulation
+/src - scripts for compiling multislice
+
