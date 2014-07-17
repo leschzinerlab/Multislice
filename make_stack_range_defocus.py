@@ -61,7 +61,7 @@ def main(params):
 	while l <= MAX:
 	
 		if n is True:
-			cmd = './generate_gold_images.py -i %s -m %s --def=%s --e=%s -n' %(i,mtf,str(l),dose)
+			cmd = '/labdata/allab/michaelc/Scripts/Multislice/generate_gold_images.py -i %s -m %s --def=%s --e=%s -n' %(i,mtf,str(l),dose)
 			subprocess.Popen(cmd,shell=True).wait()
 	
 			i2 = '%s_%05dA_%02ddose_image.spi'%(i[:-4],(l),dose)
@@ -77,7 +77,7 @@ def main(params):
 			subprocess.Popen(cmd,shell=True).wait()
 
 		if n is False:
-			cmd = './generate_gold_images.py -i %s -m %s --def=%s --e=%s' %(i,mtf,str(l),dose)
+			cmd = '/labdata/allab/michaelc/Scripts/Multislice/generate_gold_images.py -i %s -m %s --def=%s --e=%s' %(i,mtf,str(l),dose)
 			subprocess.Popen(cmd,shell=True).wait()
 
 			i2 = '%s_noise_%05dA_%02ddose_image.spi'%(i[:-4],(l),dose)

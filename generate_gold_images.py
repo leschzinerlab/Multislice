@@ -97,7 +97,7 @@ def main(params):
 	if n is False:
 
 		#Add noise to .tif image:  add_poisson
-		cmd="/home/michael/BATCHLIB/multislice/src/add_poisson"
+		cmd="/labdata/allab/michaelc/Scripts/Multislice/bin/add_poisson"
 		
 		if debug is True:
 			print "%s" %(cmd)
@@ -114,7 +114,7 @@ def main(params):
 
 	#Simulate EM image: image
 	
-	cmd2="/home/michael/BATCHLIB/multislice/src/image"
+	cmd2="/labdata/allab/michaelc/Scripts/Multislice/bin/image"
 	if debug is True:
 		print "%s" %(cmd2)
 		print "%s" %(i3)
@@ -134,10 +134,10 @@ def main(params):
         [o,e] = a.communicate("%s\n"%(i3) + "0\n" + "%s_%05dA.tif\n"%(i3[:-4],defocus) + "2.2\n" + "%s\n"%(defocus) + "10\n" + "0\n" + "0\n" + "0\n" + "0\n" + "0\n" + "0\n")	
 
 	if debug is True:
-		print "/home/michael/BATCHLIB/multislice/tif2spi.b %s_%05dA.tif"%(i3[:-4],defocus)
+		print "/labdata/allab/michaelc/Scripts/Multislice/tif2spi.b %s_%05dA.tif"%(i3[:-4],defocus)
 
 	#Convert .tif to .spi
-	cmd = "/home/michael/BATCHLIB/multislice/tif2spi.b %s_%05dA.tif"%(i3[:-4],defocus)
+	cmd = "/labdata/allab/michaelc/Scripts/Multislice/tif2spi.b %s_%05dA.tif"%(i3[:-4],defocus)
 	subprocess.Popen(cmd,shell=True).wait()	
 	
 	#Run spider script:
@@ -151,7 +151,7 @@ def main(params):
 	cmd = "rm %s_%05dA_ft.spi %s_%05dA_ft_mtf.spi" %(i3[:-4],defocus,i3[:-4],defocus)
 	subprocess.Popen(cmd,shell=True).wait()
 
-	cmd = "proc2d %s_%05dA_ft_mtf_ft.spi %s_%05dA_%02ddose_image.spi edgenorm=0,1" %(i3[:-4],defocus,i3[:-4],defocus,dose)
+	cmd = "proc2d %s_%05dA_ft_mtf_ft.spi %s_%05dA_%02ddose_image.spi" %(i3[:-4],defocus,i3[:-4],defocus,dose)
 	subprocess.Popen(cmd,shell=True).wait()
 
 	cmd = "rm %s_%05dA_ft_mtf_ft.spi" %(i3[:-4],defocus)

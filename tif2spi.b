@@ -12,13 +12,15 @@ echo "! "
 echo "! "
 echo "! IMAGIC program: em2em ------------------------------------------------"
 echo "! "
-/opt/qb3/imagic-110326/stand/em2em.e <<EOF
+/programs/x/imagic/leschziner/stand/em2em.e <<EOF
 TIF
 SPI
-SIN
+SINGLE_FILE
 NO
 NO
-$file
+${file:r}
 ${file:r}.spi
+spi
 LINUX
 EOF
+
