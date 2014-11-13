@@ -1,6 +1,7 @@
 Multislice image simulations of PDB models for accurate cryoEM image simulation.
 
-Please read the (wiki) [https://github.com/leschzinerlab/Multislice/wiki] to learn more about how to use these scripts. 
+Please read the wiki to learn more about how to use these scripts: 
+https://github.com/leschzinerlab/Multislice/wiki
 
 /bin - executables for image simulation
 /src - scripts for compiling multislice
